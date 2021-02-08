@@ -31,11 +31,11 @@ def helloworldview(request):
                 total = response['response'][x]['cases']['total']
                 deaths = int(total) - int(active) - int(recovered)
         context = {'selectedcountry': selectedcountry,'list1':list1,'new' : new, "active":active, 'critical':critical, 'recovered':recovered, 'deaths':deaths, 'total': total}
-        return render(request,'helloworld.html' , context)   
+        return render(request,'index.html' , context)   
     noofresults = int(response['results'])
     
     for i in range(0, noofresults):
         
         list1.append(response['response'][i]['country'])
     context = {'list1':list1}
-    return render(request,'helloworld.html' , context)
+    return render(request,'index.html' , context)
