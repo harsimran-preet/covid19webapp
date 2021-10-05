@@ -19,6 +19,7 @@ def helloworldview(request):
     noofresults = int(response['results'])
     for x in range(0, noofresults):
         list1.append(response['response'][x]['country'])
+        list1.sort()
     if request.method == 'POST':
         
         selectedcountry = request.POST['selectedcountry']
